@@ -1,4 +1,4 @@
-<img src="logo/CE-ABC.png" width="40%">
+<img src="logo/FAILURE.png" width="40%">
 
 **FAILURE** repository stores a Matlab code to simulate the propagation of uncertainties in a plane stress problem subjected to uncertainties. More details are in the following paper:
 - *A. Cunha Jr, S. da Silva, and Y. Yanik, Is Tresca really more conservative than von Mises?, Preprint, 2022*
