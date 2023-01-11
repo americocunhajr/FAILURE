@@ -181,6 +181,7 @@ disp(' ');
 
 
 % preallocate memory for MC samples
+MC_sigma = zeros(Ns,3);
 MC_s_vm  = zeros(Ns,1);
 MC_s_tr  = zeros(Ns,1);
 MC_SF_vm = zeros(Ns,1);
@@ -221,10 +222,13 @@ for imc=1:Ns
                      (sigma(3)-sigma(1))^2));
     
     % Tresca stress (Pa)
-    s_tr = 0.5*max([sigma(3)-sigma(2); ...
-                    sigma(3)-sigma(1); ...
-                    sigma(2)-sigma(1)]);
+    s_tr = 0.5*max(abs([sigma(3)-sigma(2); ...
+                        sigma(3)-sigma(1); ...
+                        sigma(2)-sigma(1)]));
     
+    % principal stresses (Pa)
+    MC_sigma(imc,:) = sigma;
+
     % equivalent stresses (Pa)
     MC_s_vm(imc,1) = s_vm;
     MC_s_tr(imc,1) = s_tr;
@@ -254,12 +258,16 @@ disp(' ');
 Nbins = round(sqrt(Ns));
 
 %  histogram estimator
-[bins_SF_vm,freq_SF_vm] = randvar_pdf(MC_SF_vm,Nbins);
-[bins_SF_tr,freq_SF_tr] = randvar_pdf(MC_SF_tr,Nbins);
+[bins_SF_vm,freq_SF_vm] = Randvar_PDF(MC_SF_vm     ,Nbins);
+[bins_SF_tr,freq_SF_tr] = Randvar_PDF(MC_SF_tr     ,Nbins);
+[bins_sig1 ,freq_sig1 ] = Randvar_PDF(MC_sigma(:,1),Nbins);
+[bins_sig3 ,freq_sig3 ] = Randvar_PDF(MC_sigma(:,3),Nbins);
 
 % kernal density estimator
 [ksd_SF_vm,supp_SF_vm] = ksdensity(MC_SF_vm);
 [ksd_SF_tr,supp_SF_tr] = ksdensity(MC_SF_tr);
+[ksd_sig1 ,supp_sig1 ] = ksdensity(MC_sigma(:,1));
+[ksd_sig3 ,supp_sig3 ] = ksdensity(MC_sigma(:,3));
 
 toc
 % -----------------------------------------------------------
@@ -285,17 +293,17 @@ ylab   = ' Probability Density Function';
 xmin   = 0.5;
 xmax   = 5.0;
 ymin   = 0.0;
-ymax   = 2.0;
+ymax   = 5.0;
 leg1   = 'Tresca';
 leg2   = 'von Mises';
 gname  = [num2str(case_name),'_SF_pdf'];
 
-fig1 = graph_bar_curve2(bins_SF_tr,freq_SF_tr,...
-                        bins_SF_vm,freq_SF_vm,...
-                        supp_SF_tr,ksd_SF_tr,...
-                        supp_SF_vm,ksd_SF_vm,...
-                        gtitle,leg1,leg2,...
-                        xlab,ylab,xmin,xmax,ymin,ymax,gname);
+fig1 = Graph_BarCurve2(bins_SF_tr,freq_SF_tr,...
+                       bins_SF_vm,freq_SF_vm,...
+                       supp_SF_tr,ksd_SF_tr,...
+                       supp_SF_vm,ksd_SF_vm,...
+                       gtitle,leg1,leg2,...
+                       xlab,ylab,xmin,xmax,ymin,ymax,gname);
 %close(fig1);
 % ...........................................................
 
@@ -313,7 +321,7 @@ leg1   = 'Tresca';
 leg2   = 'von Mises';
 gname  = [num2str(case_name),'_SF_samples'];
 flag   = 'eps';
-fig2 = graph_samples(MC_SF_tr,MC_SF_vm,...
+fig2 = Graph_Samples(MC_SF_tr,MC_SF_vm,...
                      SF_tr_nominal,SF_vm_nominal,...
                      gtitle,xlab,ylab,...
                      leg1,leg2,...
@@ -322,7 +330,52 @@ fig2 = graph_samples(MC_SF_tr,MC_SF_vm,...
 % ...........................................................
 
 
+% plot main stresses
+% ...........................................................
+gtitle = ' ';
+xlab   = ' \sigma_1';
+ylab   = ' \sigma_3';
+xmin   = -3.0e8;
+xmax   =  3.0e8;
+ymin   = -3.0e8;
+ymax   =  3.0e8;
+leg1   = 'Tresca';
+leg2   = 'von Mises';
+leg3   = 'Stress State Sample';
+gname  = [num2str(case_name),'_sigma'];
+flag   = 'eps';
+fig3   = Graph_MainStresses(MC_sigma(:,1),MC_sigma(:,3),SY,...
+                            gtitle,xlab,ylab,...
+                            leg1,leg2,leg3,...
+                            xmin,xmax,ymin,ymax,gname);
+
+%close(fig3);
+% ...........................................................
+
+
+
+% plot principal stress PDFs
+% ...........................................................
+gtitle = ' ';
+xlab   = ' Principal Stress';
+ylab   = ' Probability Density Function';
+xmin   = -SY;
+xmax   =  SY;
+ymin   = 0.0;
+ymax   = 1.0e-7;
+leg1   = '\sigma_1';
+leg2   = '\sigma_3';
+gname  = [num2str(case_name),'_sigma_pdf'];
+
+fig4 = Graph_BarCurve1(bins_sig1,freq_sig1,...
+                       bins_sig3,freq_sig3,...
+                       supp_sig1,ksd_sig1,...
+                       supp_sig3,ksd_sig3,...
+                       gtitle,leg1,leg2,...
+                       xlab,ylab,xmin,xmax,ymin,ymax,gname);
+%close(fig4);
+% ...........................................................
+
+
 toc
 % -----------------------------------------------------------
-
-
