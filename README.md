@@ -23,7 +23,7 @@ perspective on the applications of failure theories},
    year    = {2023},
    volume  = {~},
    pages   = {~},
-   note    = {~},
+   doi     = {~},
 }
 ```
 
