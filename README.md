@@ -35,7 +35,7 @@ perspective on the applications of failure theories},
 
 ## Institutional support
 
-<img src="logo/logo_uerj_color.jpeg" width="10%"> &nbsp; &nbsp; <img src="logo/logo_unesp_color.png" width="20%"> &nbsp; &nbsp; <img src="logo/logo_salerno_color.png" width="20%">
+<img src="logo/logo_uerj_color.jpeg" width="10%"> &nbsp; &nbsp; <img src="logo/logo_unesp_color.png" width="20%"> &nbsp; &nbsp; <img src="logo/logo_ttu_color.png" width="20%"> &nbsp; &nbsp; <img src="logo/logo_salerno_color.png" width="25%">
 
 ## Funding
 
