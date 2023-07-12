@@ -1,8 +1,7 @@
 <img src="logo/FAILURE.png" width="40%">
 
 **FAILURE** repository stores a Matlab code to simulate the propagation of uncertainties in a plane stress problem subjected to uncertainties. More details are in the following paper:
-- *A. Cunha Jr, Y. Yanik, C. Olivieri and S. da Silva, Is Tresca really more conservative than von Mises? A probabilistic
-perspective on the applications of failure theories, Preprint, 2023*
+- *A. Cunha Jr, Y. Yanik, C. Olivieri and S. da Silva, Tresca vs. von Mises: Which failure criterion is more conservative in a probabilistic context?, Preprint, 2023*
 
 ## Authors
 - Americo Cunha Jr
@@ -12,14 +11,12 @@ perspective on the applications of failure theories, Preprint, 2023*
 
 ## Citing this study
 We ask the code users to cite the following manuscript in any publications reporting work done with our code:
-- *A. Cunha Jr, Y. Yanik, C. Olivieri and S. da Silva, Is Tresca really more conservative than von Mises? A probabilistic
-perspective on the applications of failure theories, Preprint, 2023*
+- *A. Cunha Jr, Y. Yanik, C. Olivieri and S. da Silva, Tresca vs. von Mises: Which failure criterion is more conservative in a probabilistic context?, Preprint, 2023*
 
 ```
 @article{CunhaJr2023,
    author  = {A {Cunha~Jr} and Y. Yanik and C. Olivieri and S. {da Silva}},
-   title   = {Is Tresca really more conservative than von Mises?  A probabilistic
-perspective on the applications of failure theories},
+   title   = {Tresca vs. von Mises: Which failure criterion is more conservative in a probabilistic context?},
    journal = {Preprint},
    year    = {2023},
    volume  = {~},
