@@ -57,6 +57,7 @@ function fig = Graph_MainStresses(sigma1,sigma2,SY,...
     set(fh1,'LineStyle','-');
     set(fh2,'LineWidth',3.0);
     set(fh2,'LineStyle','-');
+    set(fh3,'MarkerSize',10.0);
     xlabel(xlab,'FontSize',20,'FontName','Helvetica');
     ylabel(ylab,'FontSize',20,'FontName','Helvetica');
     %uistack(fh1,'top');

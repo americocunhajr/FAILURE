@@ -10,15 +10,15 @@
 %
 %  last update: July 30, 2022
 % -----------------------------------------------------------------
-function fig = Graph_Samples(samples1,samples2,x1,x2,...
+function fig = Graph_Samples(samples1,samples2,x1,x2,x3,...
                                     gtitle,xlab,ylab,...
-                                    leg1,leg2,...
+                                    leg1,leg2,leg3,...
                                     xmin,xmax,ymin,ymax,gname)
 	
     % check number of arguments
-    if nargin < 14
+    if nargin < 16
         error('Too few inputs.')
-    elseif nargin > 15
+    elseif nargin > 17
         error('Too many inputs.')
     end
 
@@ -32,6 +32,9 @@ function fig = Graph_Samples(samples1,samples2,x1,x2,...
     fh1 = plot(samples1,1:length(samples1),'xm');
     hold all
     fh2 = plot(samples2,1:length(samples2),'*c');
+    if ~isempty(x3)
+        fh5 =  line([x3 x3],[ymin ymax],'Color','k');
+    end
     fh3 =  line([x1 x1],[ymin ymax],'Color','r');
     fh4 =  line([x2 x2],[ymin ymax],'Color','b');
     set(gcf,'color','white');
@@ -44,7 +47,11 @@ function fig = Graph_Samples(samples1,samples2,x1,x2,...
     set(gca,'XColor',[.3 .3 .3],'YColor',[.3 .3 .3]);
     set(gca,'FontName','Helvetica');
     set(gca,'FontSize',18);
-    legend(leg1,leg2,'Location','northeast');
+    if ~isempty(x3)
+        legend(leg1,leg2,leg3,'Location','northeast');
+    else
+        legend(leg1,leg2,'Location','northeast');
+    end
     
     xlim([xmin xmax]);
     ylim([ymin ymax]);
@@ -55,6 +62,10 @@ function fig = Graph_Samples(samples1,samples2,x1,x2,...
     set(fh3,'LineWidth',5.0);
     set(fh4,'LineStyle','--');
     set(fh4,'LineWidth',5.0);
+    if ~isempty(x3)
+        set(fh5,'LineStyle','-');
+        set(fh5,'LineWidth',5.0);
+    end
     xlabel(xlab,'FontSize',20,'FontName','Helvetica');
     ylabel(ylab,'FontSize',20,'FontName','Helvetica');
     
