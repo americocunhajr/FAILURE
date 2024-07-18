@@ -1,6 +1,6 @@
-## Failure Criteria Uncertainty Propagation
+## Framework for Assessing Inherent Limitations and Uncertainties in Reliability Engineering
 
-**FAILURE** is a Matlab code designed to simulate the propagation of uncertainties in equivalent stress calculation problems subjected to uncertainties. This repository focuses on comparing the Tresca and von Mises failure criteria in a probabilistic context. 
+**FAILURE: Framework for Assessing Inherent Limitations and Uncertainties in Reliability Engineering** is a Matlab code designed to simulate the propagation of uncertainties in equivalent stress calculation problems subjected to uncertainties. This repository focuses on comparing the Tresca and von Mises failure criteria in a probabilistic context. 
 
 <p align="center">
 <img src="logo/FailureTheory.png" width="60%">
