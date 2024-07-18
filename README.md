@@ -3,6 +3,10 @@
 **FAILURE** repository stores a Matlab code to simulate the propagation of uncertainties in equivalent stress calculation problems subjected to uncertainties. More details are in the following paper:
 - *A. Cunha Jr, Y. Yanik, C. Olivieri and S. da Silva, Tresca vs. von Mises: Which failure criterion is more conservative in a probabilistic context?, Preprint, 2023*
 
+<p align="center">
+<img src="logo/FailureTheory.png" width="60%">
+</p>
+
 ### Authors
 - Americo Cunha Jr
 - Yasar Yanik
