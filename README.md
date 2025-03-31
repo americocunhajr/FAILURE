@@ -20,7 +20,7 @@
 
 ### Overview
 **FAILURE** provides a framework for simulating and analyzing the propagation of uncertainties in stress calculations under different failure criteria. The main goal is to determine which criterion, Tresca or von Mises, is more conservative in a probabilistic context. More details can be found in the following paper:
-- **A. Cunha Jr, Y. Yanik, C. Olivieri, and S. da Silva**, *Tresca vs. von Mises: Which failure criterion is more conservative in a probabilistic context?*, Journal of Applied Mechanics, 2023 (Accepted for publication) <a href="https://doi.org/10.1115/1.4063894" target="_blank">DOI</a>
+- **A. Cunha Jr, Y. Yanik, C. Olivieri and S. da Silva, Tresca vs. von Mises: Which failure criterion is more conservative in a probabilistic context?, Journal of Applied Mechanics, vol. 91, pp 111008, 2024 <a href="https://doi.org/10.1115/1.4063894" target="_blank">DOI</a>
 
 ### Features
 - Simulates the propagation of uncertainties in equivalent stress calculations
@@ -59,16 +59,16 @@ To get started with **FAILURE**, follow these steps:
 
 ### Citing FAILURE
 We ask the code users to cite the following manuscript in any publications reporting work done with our code:
-- *A. Cunha Jr, Y. Yanik, C. Olivieri and S. da Silva, Tresca vs. von Mises: Which failure criterion is more conservative in a probabilistic context?, Journal of Applied Mechanics, 2023 (Accepted for publication) https://doi.org/10.1115/1.4063894*
+- *A. Cunha Jr, Y. Yanik, C. Olivieri and S. da Silva, Tresca vs. von Mises: Which failure criterion is more conservative in a probabilistic context?, Journal of Applied Mechanics, vol. 91, pp 111008, 2024 https://doi.org/10.1115/1.4063894*
 
 ```
-@article{CunhaJr2023inpress,
+@article{CunhaJr2024JAM,
    author  = {A {Cunha~Jr} and Y. Yanik and C. Olivieri and S. {da Silva}},
    title   = {Tresca vs. von Mises: Which failure criterion is more conservative in a probabilistic context?},
    journal = {Journal of Applied Mechanics},
-   year    = {2023},
-   volume  = {Accepted for publication},
-   pages   = {~},
+   year    = {2024},
+   volume  = {91},
+   pages   = {111008},
    doi     = {10.1115/1.4063894},
 }
 ```
