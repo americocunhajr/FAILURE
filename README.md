@@ -80,7 +80,7 @@ We ask the code users to cite the following manuscript in any publications repor
 
 ### Institutional support
 
-<img src="logo/logo_uerj.png" width="20%"> &nbsp; &nbsp; <img src="logo/logo_unesp_color.png" width="22%"> &nbsp; &nbsp; <img src="logo/logo_ttu_color.png" width="22%"> &nbsp; &nbsp; <img src="logo/logo_salerno_color.png" width="21%">
+<img src="logo/logo_uerj.png" width="10%"> &nbsp; &nbsp; <img src="logo/logo_unesp_color.png" width="22%"> &nbsp; &nbsp; <img src="logo/logo_ttu_color.png" width="22%"> &nbsp; &nbsp; <img src="logo/logo_salerno_color.png" width="21%">
 
 ### Funding
 
